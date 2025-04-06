@@ -1,0 +1,6 @@
+{
+    "debugpy.debugJustMyCode": false,
+    "remote.forwardOnOpen": false,
+    "debug.internalConsoleOptions": "neverOpen",
+    "debug.openDebug": "neverOpen"
+}
