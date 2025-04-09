@@ -1,10 +1,12 @@
 <script lang="ts">
-	import App from './../App.svelte';
-    import { writable } from "svelte/store";
-
     export let AppName: string = "Authenticator";
+    export let errorCode: number = 404;
+    export let Fingerprint: string = "";
 
-    let errorMessage: string = "";
+    const _unused = { errorCode, Fingerprint };
+
+    // TODO: use real variables
+    let errorMessage: string;
     let serviceName: string = "Test Service";
     let login: string = "User";
     let avatarPath: string = "https://static.wikitide.net/hololivewiki/4/4e/Vestia_Zeta_-_Portrait_01.png";
@@ -38,10 +40,14 @@
         margin-right: 10px;
     }
     .nickname {
-        display: inline;
+        display: inline-block;
         font-size: 1.1rem;
         font-weight: 600;
         color: var(--text-color);
         vertical-align: middle;
+        max-width: calc(100% - 70px);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 </style>
